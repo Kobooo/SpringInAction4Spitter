@@ -7,7 +7,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import spittr.Spittle;
@@ -60,7 +59,7 @@ public class JdbcSpittleRepository implements SpittleRepository {
   private static class SpittleRowMapper implements RowMapper<Spittle> {
     public Spittle mapRow(ResultSet rs, int rowNum) throws SQLException {
       return new Spittle(
-          //rs.getLong("id"),
+          rs.getLong("id"),
           rs.getString("message"), 
           rs.getDate("created_at"), 
           rs.getDouble("longitude"), 

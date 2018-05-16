@@ -4,9 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
-import spittr.config.SpitterWebInitializer;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan({"spittr"})
 public class SpringBootWebApplication extends SpringBootServletInitializer {
 
 	@Override
@@ -15,6 +16,6 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
 	}
 
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(new Class[] {SpringBootWebApplication.class, SpitterWebInitializer.class} ,args);
+		SpringApplication.run(new Class[] {SpringBootWebApplication.class} ,args);
 	}
 }

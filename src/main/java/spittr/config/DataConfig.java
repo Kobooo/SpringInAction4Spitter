@@ -16,12 +16,13 @@ public class DataConfig {
   public DataSource dataSource() {
     return new EmbeddedDatabaseBuilder()
             .setType(EmbeddedDatabaseType.H2)
-            .addScript("schema.sql")
+            //.addScript("schema.sql")
             .build();
   }
-
+  
   @Bean
   public JdbcOperations jdbcTemplate(DataSource dataSource) {
     return new JdbcTemplate(dataSource);
   }
+
 }

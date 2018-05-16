@@ -32,15 +32,7 @@ public class Spitter {
   private String email;
 
   public Spitter() {}
-
-  public Spitter(Long id, String username, String password, String firstName, String lastName) {
-    this(id, username, password, firstName, lastName, "null");
-  }
-
-  public Spitter(String username, String password, String firstName, String lastName) {
-    this(null, username, password, firstName, lastName, "null");
-  }
-
+  
   public Spitter(String username, String password, String firstName, String lastName, String email) {
     this(null, username, password, firstName, lastName, email);
   }
@@ -97,7 +89,7 @@ public class Spitter {
   public String getEmail() {
     return email;
   }
-
+  
   public void setEmail(String email) {
     this.email = email;
   }
